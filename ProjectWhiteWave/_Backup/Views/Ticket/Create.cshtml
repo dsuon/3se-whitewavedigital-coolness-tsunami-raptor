@@ -1,0 +1,21 @@
+﻿@model ProjectWhiteWave.Models.Ticket
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Ticket"))
+{
+
+    @Html.Partial("~/Views/Ticket/_CreatePartial.cshtml", Model)
+
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,78 @@
+﻿@model ProjectWhiteWave.ViewModels.SupportEventViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "SupportEvent", new { active = false }))
+{
+    @Html.HiddenFor(se => se.SupportEvent.TicketId)
+    @Html.Partial("~/Views/SupportEvent/_EditPartial.cshtml", Model)
+}
+
+<div>
+    @Html.ActionLink("Back to Ticket", "Details", "Ticket", new { id = Model.SupportEvent.TicketId }, null)
+</div>
+@*
+<div style="height: 5px;"></div>
+<div>
+    <h4>Technicians</h4>
+
+    @* @Html.ActionLink("Add", "Add", "SupportEvent", new { ticketId = Model.TicketId }, null) 
+
+@using (Html.BeginForm("AddTechToTicket", "SupportEvent", FormMethod.Post, null))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true)
+        @*
+        @Html.HiddenFor(model => model.SupportEventId)
+        @Html.HiddenFor(model => model.DateOpened)
+        @Html.HiddenFor(model => model.DateClosed)
+        @Html.HiddenFor(model => model.TicketId)
+        @Html.HiddenFor(model => model.Description)
+        
+        <div class="form-group">
+                @Html.LabelFor(model => model.SupportEvent.Employees, String.Empty)
+                <div class="col-md-10">
+                    @Html.DropDownListFor(t => t.SupportEvent.Employees, "Id", (SelectList)ViewData["Techs"])
+                    @Html.ValidationMessageFor(model => model.SupportEvent.Employees)
+
+                <input type="submit" value="Add" class="btn btn-default" />
+            </div>
+       </div>
+    </div>
+}
+    @if (Model.Employees.Count != 0)
+    {
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var e in Model.Employees)
+                {
+                        <tr>
+                            <td>@e.FirstName</td>
+                            <td>@e.LastName</td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", "Employee", new { id = e.Id }, null)
+                            </td>
+                        </tr>
+                }
+                </table>
+            </div>
+    }
+    else
+    {
+            <hr />
+            <p>There are no technicians for this support event.</p>
+    }
+    </div>
+*@

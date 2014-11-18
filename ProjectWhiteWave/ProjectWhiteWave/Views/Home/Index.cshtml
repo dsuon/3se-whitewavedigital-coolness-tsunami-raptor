@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <p><img id="ww-logo" src="~/Content/Images/ww-logo.png" /></p>
+    <h1 class="app-title">White Wave Digital</h1>
+    <p class="lead">Covering your digital assets since 1993</p>
+    <p><a href="http://www.whitewavedigital.com/" class="btn btn-primary btn-large">Learn more »</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Tickets</h2>
+        <p>
+            Create, manage, and review tickets.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Create", "Ticket")">Create a Ticket &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Ticket")">Manage Tickets &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("PriorityQueue", "Ticket")">View Active &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Clients</h2>
+        <p>
+            Add, manage, and review clients.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Create", "Client")">Add a Client &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Client")">Manage Clients &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("PriorityQueue", "Client")">View Active &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Financials</h2>
+        <p>
+            Manage payments, deposits, and invoices.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Create", "Ticket")">Add a Transaction &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Index", "Ticket")">Manage Finances &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("PriorityQueue", "Ticket")">View Active &raquo;</a></p>
+    </div>
+</div>

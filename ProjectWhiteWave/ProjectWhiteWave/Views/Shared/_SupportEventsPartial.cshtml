@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProjectWhiteWave.Models.SupportEvent>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+@if (Model.ToList().Count != 0)
+{
+    <div>
+        <table class="table">
+            <tr>
+                <th>Description</th>
+                <th>Opened</th>
+                <th>Closed</th>
+                <th></th>
+            </tr>
+            @foreach (var se in Model)
+            {
+                <tr>
+                    <td>@se.Description</td>
+                    <td>@se.DateOpened</td>
+                    <td>@se.DateClosed</td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditForActiveTicket", "SupportEvent", new { id = se.SupportEventId }, null) |
+                        @Html.ActionLink("Details", "DetailsForActiveTickey", "SupportEvent", new { id = se.SupportEventId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = se.SupportEventId })
+                    </td>
+                </tr>
+            }
+        </table>
+        </div>
+}
+else
+{
+    <hr />
+    <p>There are no support events for this ticket.</p>
+}
+</body>
+</html>

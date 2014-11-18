@@ -1,0 +1,16 @@
+﻿@model ProjectWhiteWave.Models.SupportEvent
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "SupportEvent", new { ticketId = Model.TicketId, active = false }))
+{
+    @Html.Partial("~/Views/SupportEvent/_CreatePartial.cshtml", Model)
+}
+
+<div>
+    @Html.ActionLink("Back to Ticket", "Details", "Ticket", new { id = Model.TicketId })
+</div>

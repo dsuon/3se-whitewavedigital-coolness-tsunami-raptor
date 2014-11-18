@@ -1,0 +1,12 @@
+﻿@model ProjectWhiteWave.Models.SupportEvent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@Html.Partial("~/Views/SupportEvent/_DetailsPartial.cshtml", Model)
+
+<p>
+    @Html.ActionLink("Edit", "EditForActiveTicket", new { id = Model.SupportEventId }) |
+    @Html.ActionLink("Back to Ticket", "ActiveTicketDetails", "Ticket", new { ticketId = Model.TicketId })
+</p>

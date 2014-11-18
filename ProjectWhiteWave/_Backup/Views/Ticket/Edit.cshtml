@@ -1,0 +1,39 @@
+﻿@model ProjectWhiteWave.Models.Ticket
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Partial("~/Views/Ticket/_EditPartial.cshtml")
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<div style="height: 5px;"></div>
+<div>
+    <h4>Support Events</h4>
+    
+    @Html.ActionLink("Create New", "Create", "SupportEvent", new { ticketId = Model.TicketId }, null)
+    
+    @if (Model.SupportEvents.Count != 0)
+    {
+        @Html.Partial("~/Views/Shared/_SupportEventsPartial.cshtml", Model.SupportEvents)
+    }
+    else
+    {
+        <hr />
+        <p>There are no support events for this ticket.</p>
+    }
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

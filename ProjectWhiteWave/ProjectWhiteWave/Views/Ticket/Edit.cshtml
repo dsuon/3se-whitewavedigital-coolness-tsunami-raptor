@@ -1,0 +1,62 @@
+﻿@model ProjectWhiteWave.Models.Ticket
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Ticket", new { active = false } ))
+{
+    @Html.Partial("~/Views/Ticket/_EditPartial.cshtml")
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<div style="height: 5px;"></div>
+<div>
+    <h4>Support Events</h4>
+    
+    @Html.ActionLink("Create New", "Create", "SupportEvent", new { ticketId = Model.TicketId }, null)
+    
+    @if (Model.SupportEvents.Count != 0)
+    {
+        <div>
+        <table class="table">
+            <tr>
+                <th>Description</th>
+                <th>Opened</th>
+                <th>Closed</th>
+                <th></th>
+            </tr>
+            @foreach (var se in Model.SupportEvents)
+            {
+                <tr>
+                    <td>@se.Description</td>
+                    <td>@se.DateOpened</td>
+                    <td>@se.DateClosed</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "SupportEvent", new { id = se.SupportEventId }, null) |
+                        @Html.ActionLink("Details", "Details", "SupportEvent", new { id = se.SupportEventId }, null) |
+                        @Html.ActionLink("Delete", "Delete", new { id = se.SupportEventId })
+                    </td>
+                </tr>
+            }
+        </table>
+        </div>
+    }
+    else
+    {
+        <hr />
+        <p>There are no support events for this ticket.</p>
+    }
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

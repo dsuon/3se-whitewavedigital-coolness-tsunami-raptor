@@ -1,0 +1,26 @@
+﻿@model ProjectWhiteWave.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    @Html.Partial("~/Views/Ticket/_TicketDetailsPartial.cshtml", Model)
+    <p>
+        @Html.ActionLink("Edit", "EditActiveTicket", new { id = Model.TicketId }) |
+        @Html.ActionLink("Back to List", "PriorityQueue")
+    </p>
+</div>
+<div style="height: 5px;"></div>
+<div>
+    <h4>Support Events</h4>
+    @Html.ActionLink("Create New", "CreateActiveSupportEvent", new { id = Model.TicketId })
+    @Html.Partial("~/Views/Shared/_SupportEventsPartial.cshtml", Model.SupportEvents)
+    <p>
+        @Html.ActionLink("Back to List", "PriorityQueue")
+    </p>
+</div>

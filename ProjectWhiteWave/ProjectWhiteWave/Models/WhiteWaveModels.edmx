@@ -1,0 +1,1118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WhiteWaveModels.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="WhiteWaveModelsStoreContainer">
+    <EntitySet Name="Tickets" EntityType="WhiteWaveModels.Store.Tickets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SupportEvents" EntityType="WhiteWaveModels.Store.SupportEvents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="WhiteWaveModels.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People" EntityType="WhiteWaveModels.Store.People" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeTypes" EntityType="WhiteWaveModels.Store.EmployeeTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="WhiteWaveModels.Store.Items" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemTypes" EntityType="WhiteWaveModels.Store.ItemTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MailingAddresses" EntityType="WhiteWaveModels.Store.MailingAddresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmailAddresses" EntityType="WhiteWaveModels.Store.EmailAddresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhoneNumbers" EntityType="WhiteWaveModels.Store.PhoneNumbers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhoneNumberTypes" EntityType="WhiteWaveModels.Store.PhoneNumberTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Suppliers" EntityType="WhiteWaveModels.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CLOUs" EntityType="WhiteWaveModels.Store.CLOUs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MOUs" EntityType="WhiteWaveModels.Store.MOUs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Accounts" EntityType="WhiteWaveModels.Store.Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountTypes" EntityType="WhiteWaveModels.Store.AccountTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Projects" EntityType="WhiteWaveModels.Store.Projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Events" EntityType="WhiteWaveModels.Store.Events" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EventTypes" EntityType="WhiteWaveModels.Store.EventTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReceivedPayments" EntityType="WhiteWaveModels.Store.ReceivedPayments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactInformations" EntityType="WhiteWaveModels.Store.ContactInformations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Priorities" EntityType="WhiteWaveModels.Store.Priorities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People_Employee" EntityType="WhiteWaveModels.Store.People_Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeSupportEvent" EntityType="WhiteWaveModels.Store.EmployeeSupportEvent" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EmployeeTypeEmployee" Association="WhiteWaveModels.Store.EmployeeTypeEmployee">
+      <End Role="EmployeeType" EntitySet="EmployeeTypes" />
+      <End Role="Employee" EntitySet="People_Employee" />
+    </AssociationSet>
+    <AssociationSet Name="ItemTypeItem" Association="WhiteWaveModels.Store.ItemTypeItem">
+      <End Role="ItemType" EntitySet="ItemTypes" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="PhoneNumberTypePhoneNumber" Association="WhiteWaveModels.Store.PhoneNumberTypePhoneNumber">
+      <End Role="PhoneNumberType" EntitySet="PhoneNumberTypes" />
+      <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeCLOU" Association="WhiteWaveModels.Store.EmployeeCLOU">
+      <End Role="Employee" EntitySet="People_Employee" />
+      <End Role="CLOU" EntitySet="CLOUs" />
+    </AssociationSet>
+    <AssociationSet Name="AccountTypeAccount" Association="WhiteWaveModels.Store.AccountTypeAccount">
+      <End Role="AccountType" EntitySet="AccountTypes" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="EventTypeEvent" Association="WhiteWaveModels.Store.EventTypeEvent">
+      <End Role="EventType" EntitySet="EventTypes" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="PriorityTicket" Association="WhiteWaveModels.Store.PriorityTicket">
+      <End Role="Priority" EntitySet="Priorities" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="StatusTicket" Association="WhiteWaveModels.Store.StatusTicket">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="TicketSupportEvent" Association="WhiteWaveModels.Store.TicketSupportEvent">
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="SupportEvent" EntitySet="SupportEvents" />
+    </AssociationSet>
+    <AssociationSet Name="AccountTicket" Association="WhiteWaveModels.Store.AccountTicket">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeTicket" Association="WhiteWaveModels.Store.EmployeeTicket">
+      <End Role="Employee" EntitySet="People_Employee" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSupportEvent_Employee" Association="WhiteWaveModels.Store.FK_EmployeeSupportEvent_Employee">
+      <End Role="Employee" EntitySet="People_Employee" />
+      <End Role="EmployeeSupportEvent" EntitySet="EmployeeSupportEvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeSupportEvent_SupportEvent" Association="WhiteWaveModels.Store.FK_EmployeeSupportEvent_SupportEvent">
+      <End Role="SupportEvent" EntitySet="SupportEvents" />
+      <End Role="EmployeeSupportEvent" EntitySet="EmployeeSupportEvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_inherits_Person" Association="WhiteWaveModels.Store.FK_Employee_inherits_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Employee" EntitySet="People_Employee" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tickets">
+    <Key>
+      <PropertyRef Name="TicketId" />
+    </Key>
+    <Property Name="TicketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOpened" Type="datetime" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" Nullable="true" />
+    <Property Name="PriorityId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupportEvents">
+    <Key>
+      <PropertyRef Name="SupportEventId" />
+    </Key>
+    <Property Name="SupportEventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOpened" Type="datetime" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" Nullable="true" />
+    <Property Name="TicketId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Value" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ItemTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MailingAddresses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="State" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Zip" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailAddresses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhoneNumbers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AreaCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Number" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ext" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PhoneNumberTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhoneNumberTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLOUs">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Year" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="datetime" Nullable="false" />
+    <Property Name="Text" Type="varbinary(max)" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MOUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccountTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccountTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateStarted" Type="datetime" Nullable="false" />
+    <Property Name="DateEnded" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EventTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReceivedPayments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactInformations">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Priorities">
+    <Key>
+      <PropertyRef Name="PriorityId" />
+    </Key>
+    <Property Name="PriorityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="People_Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="EmployeeTypeId" Type="int" Nullable="false" />
+    <Property Name="SSN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DOB" Type="datetime" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeeSupportEvent">
+    <Key>
+      <PropertyRef Name="Employees_Id" />
+      <PropertyRef Name="SupportEvents_SupportEventId" />
+    </Key>
+    <Property Name="Employees_Id" Type="int" Nullable="false" />
+    <Property Name="SupportEvents_SupportEventId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="EmployeeTypeEmployee">
+    <End Role="EmployeeType" Type="WhiteWaveModels.Store.EmployeeTypes" Multiplicity="1" />
+    <End Role="Employee" Type="WhiteWaveModels.Store.People_Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmployeeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ItemTypeItem">
+    <End Role="ItemType" Type="WhiteWaveModels.Store.ItemTypes" Multiplicity="1" />
+    <End Role="Item" Type="WhiteWaveModels.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="ItemTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhoneNumberTypePhoneNumber">
+    <End Role="PhoneNumberType" Type="WhiteWaveModels.Store.PhoneNumberTypes" Multiplicity="1" />
+    <End Role="PhoneNumber" Type="WhiteWaveModels.Store.PhoneNumbers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhoneNumberType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhoneNumber">
+        <PropertyRef Name="PhoneNumberTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeCLOU">
+    <End Role="Employee" Type="WhiteWaveModels.Store.People_Employee" Multiplicity="1" />
+    <End Role="CLOU" Type="WhiteWaveModels.Store.CLOUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CLOU">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountTypeAccount">
+    <End Role="AccountType" Type="WhiteWaveModels.Store.AccountTypes" Multiplicity="1" />
+    <End Role="Account" Type="WhiteWaveModels.Store.Accounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccountType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="AccountTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EventTypeEvent">
+    <End Role="EventType" Type="WhiteWaveModels.Store.EventTypes" Multiplicity="1" />
+    <End Role="Event" Type="WhiteWaveModels.Store.Events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="EventTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PriorityTicket">
+    <End Role="Priority" Type="WhiteWaveModels.Store.Priorities" Multiplicity="1" />
+    <End Role="Ticket" Type="WhiteWaveModels.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Priority">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="PriorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StatusTicket">
+    <End Role="Status" Type="WhiteWaveModels.Store.Status" Multiplicity="1" />
+    <End Role="Ticket" Type="WhiteWaveModels.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TicketSupportEvent">
+    <End Role="Ticket" Type="WhiteWaveModels.Store.Tickets" Multiplicity="1" />
+    <End Role="SupportEvent" Type="WhiteWaveModels.Store.SupportEvents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="TicketId" />
+      </Principal>
+      <Dependent Role="SupportEvent">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountTicket">
+    <End Role="Account" Type="WhiteWaveModels.Store.Accounts" Multiplicity="1" />
+    <End Role="Ticket" Type="WhiteWaveModels.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeTicket">
+    <End Role="Employee" Type="WhiteWaveModels.Store.People_Employee" Multiplicity="1" />
+    <End Role="Ticket" Type="WhiteWaveModels.Store.Tickets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeSupportEvent_Employee">
+    <End Role="Employee" Type="WhiteWaveModels.Store.People_Employee" Multiplicity="1" />
+    <End Role="EmployeeSupportEvent" Type="WhiteWaveModels.Store.EmployeeSupportEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeSupportEvent">
+        <PropertyRef Name="Employees_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeSupportEvent_SupportEvent">
+    <End Role="EmployeeSupportEvent" Type="WhiteWaveModels.Store.EmployeeSupportEvent" Multiplicity="*" />
+    <End Role="SupportEvent" Type="WhiteWaveModels.Store.SupportEvents" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="SupportEvent">
+        <PropertyRef Name="SupportEventId" />
+      </Principal>
+      <Dependent Role="EmployeeSupportEvent">
+        <PropertyRef Name="SupportEvents_SupportEventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_inherits_Person">
+    <End Role="Person" Type="WhiteWaveModels.Store.People" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employee" Type="WhiteWaveModels.Store.People_Employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="WhiteWaveModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="WhiteWaveModelsContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tickets" EntityType="WhiteWaveModels.Ticket" />
+          <EntitySet Name="SupportEvents" EntityType="WhiteWaveModels.SupportEvent" />
+          <EntitySet Name="Status" EntityType="WhiteWaveModels.Status" />
+          <EntitySet Name="People" EntityType="WhiteWaveModels.Person" />
+          <EntitySet Name="EmployeeTypes" EntityType="WhiteWaveModels.EmployeeType" />
+          <AssociationSet Name="EmployeeTypeEmployee" Association="WhiteWaveModels.EmployeeTypeEmployee">
+            <End Role="EmployeeType" EntitySet="EmployeeTypes" />
+            <End Role="Employee" EntitySet="People" />
+          </AssociationSet>
+          <EntitySet Name="Items" EntityType="WhiteWaveModels.Item" />
+          <EntitySet Name="ItemTypes" EntityType="WhiteWaveModels.ItemType" />
+          <AssociationSet Name="ItemTypeItem" Association="WhiteWaveModels.ItemTypeItem">
+            <End Role="ItemType" EntitySet="ItemTypes" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <EntitySet Name="MailingAddresses" EntityType="WhiteWaveModels.MailingAddress" />
+          <EntitySet Name="EmailAddresses" EntityType="WhiteWaveModels.EmailAddress" />
+          <EntitySet Name="PhoneNumbers" EntityType="WhiteWaveModels.PhoneNumber" />
+          <EntitySet Name="PhoneNumberTypes" EntityType="WhiteWaveModels.PhoneNumberType" />
+          <AssociationSet Name="PhoneNumberTypePhoneNumber" Association="WhiteWaveModels.PhoneNumberTypePhoneNumber">
+            <End Role="PhoneNumberType" EntitySet="PhoneNumberTypes" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <EntitySet Name="Suppliers" EntityType="WhiteWaveModels.Supplier" />
+          <EntitySet Name="CLOUs" EntityType="WhiteWaveModels.CLOU" />
+          <AssociationSet Name="EmployeeCLOU" Association="WhiteWaveModels.EmployeeCLOU">
+            <End Role="Employee" EntitySet="People" />
+            <End Role="CLOU" EntitySet="CLOUs" />
+          </AssociationSet>
+          <EntitySet Name="MOUs" EntityType="WhiteWaveModels.MOU" />
+          <EntitySet Name="Accounts" EntityType="WhiteWaveModels.Account" />
+          <EntitySet Name="AccountTypes" EntityType="WhiteWaveModels.AccountType" />
+          <AssociationSet Name="AccountTypeAccount" Association="WhiteWaveModels.AccountTypeAccount">
+            <End Role="AccountType" EntitySet="AccountTypes" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <EntitySet Name="Projects" EntityType="WhiteWaveModels.Project" />
+          <EntitySet Name="Events" EntityType="WhiteWaveModels.Event" />
+          <EntitySet Name="EventTypes" EntityType="WhiteWaveModels.EventType" />
+          <AssociationSet Name="EventTypeEvent" Association="WhiteWaveModels.EventTypeEvent">
+            <End Role="EventType" EntitySet="EventTypes" />
+            <End Role="Event" EntitySet="Events" />
+          </AssociationSet>
+          <EntitySet Name="ReceivedPayments" EntityType="WhiteWaveModels.ReceivedPayment" />
+          <EntitySet Name="ContactInformations" EntityType="WhiteWaveModels.ContactInformation" />
+          <EntitySet Name="Priorities" EntityType="WhiteWaveModels.Priority" />
+          <AssociationSet Name="PriorityTicket" Association="WhiteWaveModels.PriorityTicket">
+            <End Role="Priority" EntitySet="Priorities" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="StatusTicket" Association="WhiteWaveModels.StatusTicket">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="TicketSupportEvent" Association="WhiteWaveModels.TicketSupportEvent">
+            <End Role="Ticket" EntitySet="Tickets" />
+            <End Role="SupportEvent" EntitySet="SupportEvents" />
+          </AssociationSet>
+          <AssociationSet Name="AccountTicket" Association="WhiteWaveModels.AccountTicket">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeTicket" Association="WhiteWaveModels.EmployeeTicket">
+            <End Role="Employee" EntitySet="People" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeSupportEvent" Association="WhiteWaveModels.EmployeeSupportEvent">
+            <End Role="Employee" EntitySet="People" />
+            <End Role="SupportEvent" EntitySet="SupportEvents" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOpened" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateClosed" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Priority" Relationship="WhiteWaveModels.PriorityTicket" FromRole="Ticket" ToRole="Priority" />
+          <Property Name="PriorityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Status" Relationship="WhiteWaveModels.StatusTicket" FromRole="Ticket" ToRole="Status" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SupportEvents" Relationship="WhiteWaveModels.TicketSupportEvent" FromRole="Ticket" ToRole="SupportEvent" />
+          <NavigationProperty Name="Account" Relationship="WhiteWaveModels.AccountTicket" FromRole="Ticket" ToRole="Account" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="WhiteWaveModels.EmployeeTicket" FromRole="Ticket" ToRole="Employee" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SupportEvent">
+          <Key>
+            <PropertyRef Name="SupportEventId" />
+          </Key>
+          <Property Name="SupportEventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOpened" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateClosed" Type="DateTime" Nullable="true" Precision="3" />
+          <NavigationProperty Name="Ticket" Relationship="WhiteWaveModels.TicketSupportEvent" FromRole="SupportEvent" ToRole="Ticket" />
+          <Property Name="TicketId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="WhiteWaveModels.EmployeeSupportEvent" FromRole="SupportEvent" ToRole="Employee" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Tickets" Relationship="WhiteWaveModels.StatusTicket" FromRole="Status" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Employee" BaseType="WhiteWaveModels.Person">
+          <NavigationProperty Name="EmployeeType" Relationship="WhiteWaveModels.EmployeeTypeEmployee" FromRole="Employee" ToRole="EmployeeType" />
+          <Property Name="EmployeeTypeId" Type="Int32" Nullable="false" />
+          <Property Name="SSN" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="CLOUs" Relationship="WhiteWaveModels.EmployeeCLOU" FromRole="Employee" ToRole="CLOU" />
+          <NavigationProperty Name="Tickets" Relationship="WhiteWaveModels.EmployeeTicket" FromRole="Employee" ToRole="Ticket" />
+          <NavigationProperty Name="SupportEvents" Relationship="WhiteWaveModels.EmployeeSupportEvent" FromRole="Employee" ToRole="SupportEvent" />
+          <Property Name="DOB" Type="DateTime" Nullable="true" />
+        </EntityType>
+        <EntityType Name="EmployeeType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Employees" Relationship="WhiteWaveModels.EmployeeTypeEmployee" FromRole="EmployeeType" ToRole="Employee" />
+        </EntityType>
+        <Association Name="EmployeeTypeEmployee">
+          <End Type="WhiteWaveModels.EmployeeType" Role="EmployeeType" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmployeeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cost" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Value" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="ItemType" Relationship="WhiteWaveModels.ItemTypeItem" FromRole="Item" ToRole="ItemType" />
+          <Property Name="ItemTypeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Items" Relationship="WhiteWaveModels.ItemTypeItem" FromRole="ItemType" ToRole="Item" />
+        </EntityType>
+        <Association Name="ItemTypeItem">
+          <End Type="WhiteWaveModels.ItemType" Role="ItemType" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="ItemTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MailingAddress">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Street" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Zip" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EmailAddress">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaCode" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Ext" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PhoneNumberType" Relationship="WhiteWaveModels.PhoneNumberTypePhoneNumber" FromRole="PhoneNumber" ToRole="PhoneNumberType" />
+          <Property Name="PhoneNumberTypeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhoneNumberType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="WhiteWaveModels.PhoneNumberTypePhoneNumber" FromRole="PhoneNumberType" ToRole="PhoneNumber" />
+        </EntityType>
+        <Association Name="PhoneNumberTypePhoneNumber">
+          <End Type="WhiteWaveModels.PhoneNumberType" Role="PhoneNumberType" Multiplicity="1" />
+          <End Type="WhiteWaveModels.PhoneNumber" Role="PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumberType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="PhoneNumberTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CLOU">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Year" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Text" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Employee" Relationship="WhiteWaveModels.EmployeeCLOU" FromRole="CLOU" ToRole="Employee" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="EmployeeCLOU">
+          <End Type="WhiteWaveModels.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="WhiteWaveModels.CLOU" Role="CLOU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CLOU">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MOU">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AccountType" Relationship="WhiteWaveModels.AccountTypeAccount" FromRole="Account" ToRole="AccountType" />
+          <Property Name="AccountTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tickets" Relationship="WhiteWaveModels.AccountTicket" FromRole="Account" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="AccountType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Accounts" Relationship="WhiteWaveModels.AccountTypeAccount" FromRole="AccountType" ToRole="Account" />
+        </EntityType>
+        <Association Name="AccountTypeAccount">
+          <End Type="WhiteWaveModels.AccountType" Role="AccountType" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="AccountTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DateStarted" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateEnded" Type="DateTime" Nullable="true" Precision="3" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="EventType" Relationship="WhiteWaveModels.EventTypeEvent" FromRole="Event" ToRole="EventType" />
+          <Property Name="EventTypeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Events" Relationship="WhiteWaveModels.EventTypeEvent" FromRole="EventType" ToRole="Event" />
+        </EntityType>
+        <Association Name="EventTypeEvent">
+          <End Type="WhiteWaveModels.EventType" Role="EventType" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Event" Role="Event" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Event">
+              <PropertyRef Name="EventTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReceivedPayment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="ContactInformation">
+          <Key>
+            <PropertyRef Name="ContactId" />
+          </Key>
+          <Property Name="ContactId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Priority">
+          <Key>
+            <PropertyRef Name="PriorityId" />
+          </Key>
+          <Property Name="PriorityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Tickets" Relationship="WhiteWaveModels.PriorityTicket" FromRole="Priority" ToRole="Ticket" />
+        </EntityType>
+        <Association Name="PriorityTicket">
+          <End Type="WhiteWaveModels.Priority" Role="Priority" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Priority">
+              <PropertyRef Name="PriorityId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="PriorityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StatusTicket">
+          <End Type="WhiteWaveModels.Status" Role="Status" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TicketSupportEvent">
+          <End Type="WhiteWaveModels.Ticket" Role="Ticket" Multiplicity="1" />
+          <End Type="WhiteWaveModels.SupportEvent" Role="SupportEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticket">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="SupportEvent">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AccountTicket">
+          <End Type="WhiteWaveModels.Account" Role="Account" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeTicket">
+          <End Type="WhiteWaveModels.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="WhiteWaveModels.Ticket" Role="Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeSupportEvent">
+          <End Type="WhiteWaveModels.Employee" Role="Employee" Multiplicity="*" />
+          <End Type="WhiteWaveModels.SupportEvent" Role="SupportEvent" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WhiteWaveModelsStoreContainer" CdmEntityContainer="WhiteWaveModelsContainer">
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Ticket)">
+        <MappingFragment StoreEntitySet="Tickets">
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="DateOpened" ColumnName="DateOpened" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupportEvents">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.SupportEvent)">
+        <MappingFragment StoreEntitySet="SupportEvents">
+          <ScalarProperty Name="SupportEventId" ColumnName="SupportEventId" />
+          <ScalarProperty Name="DateOpened" ColumnName="DateOpened" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Status)">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Employee)">
+        <MappingFragment StoreEntitySet="People_Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmployeeTypeId" ColumnName="EmployeeTypeId" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.EmployeeType)">
+        <MappingFragment StoreEntitySet="EmployeeTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Item)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ItemTypeId" ColumnName="ItemTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.ItemType)">
+        <MappingFragment StoreEntitySet="ItemTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailingAddresses">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.MailingAddress)">
+        <MappingFragment StoreEntitySet="MailingAddresses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailAddresses">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.EmailAddress)">
+        <MappingFragment StoreEntitySet="EmailAddresses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneNumbers">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.PhoneNumber)">
+        <MappingFragment StoreEntitySet="PhoneNumbers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Ext" ColumnName="Ext" />
+          <ScalarProperty Name="PhoneNumberTypeId" ColumnName="PhoneNumberTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneNumberTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.PhoneNumberType)">
+        <MappingFragment StoreEntitySet="PhoneNumberTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Supplier)">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLOUs">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.CLOU)">
+        <MappingFragment StoreEntitySet="CLOUs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOUs">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.MOU)">
+        <MappingFragment StoreEntitySet="MOUs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Account)">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AccountTypeId" ColumnName="AccountTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.AccountType)">
+        <MappingFragment StoreEntitySet="AccountTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Project)">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateStarted" ColumnName="DateStarted" />
+          <ScalarProperty Name="DateEnded" ColumnName="DateEnded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Event)">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.EventType)">
+        <MappingFragment StoreEntitySet="EventTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceivedPayments">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.ReceivedPayment)">
+        <MappingFragment StoreEntitySet="ReceivedPayments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactInformations">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.ContactInformation)">
+        <MappingFragment StoreEntitySet="ContactInformations">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priorities">
+      <EntityTypeMapping TypeName="IsTypeOf(WhiteWaveModels.Priority)">
+        <MappingFragment StoreEntitySet="Priorities">
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="EmployeeSupportEvent" TypeName="WhiteWaveModels.EmployeeSupportEvent" StoreEntitySet="EmployeeSupportEvent">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Id" ColumnName="Employees_Id" />
+      </EndProperty>
+      <EndProperty Name="SupportEvent">
+        <ScalarProperty Name="SupportEventId" ColumnName="SupportEvents_SupportEventId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,17 @@
+﻿@model ProjectWhiteWave.ViewModels.SupportEventViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "SupportEvent", new { active = true }))
+{
+    @Html.HiddenFor(ti => ti.SupportEvent.TicketId)
+    @Html.Partial("~/Views/SupportEvent/_EditPartial.cshtml", Model)
+}
+
+<div>
+    @Html.ActionLink("Back to Ticket", "ActiveTicketDetails", "Ticket", new { id = Model.SupportEvent.TicketId }, null)
+</div>

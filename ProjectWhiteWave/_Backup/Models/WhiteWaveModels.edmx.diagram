@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3942e04004c946299cc2c17955b67683" Name="Diagram1" ZoomLevel="70" >
+        <EntityTypeShape EntityType="WhiteWaveModels.Ticket" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="WhiteWaveModels.SupportEvent" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Status" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Person" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Employee" Width="1.5" PointX="0.75" PointY="4.25" />
+        <EntityTypeShape EntityType="WhiteWaveModels.EmployeeType" Width="1.5" PointX="2.875" PointY="2.125" />
+        <AssociationConnector Association="WhiteWaveModels.EmployeeTypeEmployee" />
+        <InheritanceConnector EntityType="WhiteWaveModels.Employee" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Item" Width="1.5" PointX="13.625" PointY="7.75" />
+        <EntityTypeShape EntityType="WhiteWaveModels.ItemType" Width="1.5" PointX="11.25" PointY="7.75" />
+        <AssociationConnector Association="WhiteWaveModels.ItemTypeItem" />
+        <EntityTypeShape EntityType="WhiteWaveModels.MailingAddress" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="WhiteWaveModels.EmailAddress" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="WhiteWaveModels.PhoneNumber" Width="1.5" PointX="8" PointY="0.875" />
+        <EntityTypeShape EntityType="WhiteWaveModels.PhoneNumberType" Width="1.5" PointX="5.75" PointY="0.875" />
+        <AssociationConnector Association="WhiteWaveModels.PhoneNumberTypePhoneNumber" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Supplier" Width="1.5" PointX="10.5" PointY="11.375" />
+        <EntityTypeShape EntityType="WhiteWaveModels.CLOU" Width="1.5" PointX="2.875" PointY="4.25" />
+        <AssociationConnector Association="WhiteWaveModels.EmployeeCLOU" />
+        <EntityTypeShape EntityType="WhiteWaveModels.MOU" Width="1.5" PointX="10.125" PointY="0.875" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Account" Width="1.5" PointX="2.75" PointY="9.375" />
+        <EntityTypeShape EntityType="WhiteWaveModels.AccountType" Width="1.5" PointX="4.75" PointY="9.875" />
+        <AssociationConnector Association="WhiteWaveModels.AccountTypeAccount" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Project" Width="1.5" PointX="10.375" PointY="4.875" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Event" Width="1.5" PointX="13" PointY="3.125" />
+        <EntityTypeShape EntityType="WhiteWaveModels.EventType" Width="1.5" PointX="13" PointY="0.875" />
+        <AssociationConnector Association="WhiteWaveModels.EventTypeEvent" />
+        <EntityTypeShape EntityType="WhiteWaveModels.ReceivedPayment" Width="1.5" PointX="10.625" PointY="3" />
+        <EntityTypeShape EntityType="WhiteWaveModels.ContactInformation" Width="1.5" PointX="6.75" PointY="10.125" />
+        <EntityTypeShape EntityType="WhiteWaveModels.Priority" Width="1.5" PointX="0.75" PointY="10.625" />
+        <AssociationConnector Association="WhiteWaveModels.PriorityTicket" />
+        <AssociationConnector Association="WhiteWaveModels.StatusTicket" />
+        <AssociationConnector Association="WhiteWaveModels.TicketSupportEvent" />
+        <AssociationConnector Association="WhiteWaveModels.AccountTicket" />
+        <AssociationConnector Association="WhiteWaveModels.EmployeeTicket" />
+        <AssociationConnector Association="WhiteWaveModels.EmployeeSupportEvent" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

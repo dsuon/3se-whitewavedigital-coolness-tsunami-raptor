@@ -1,0 +1,67 @@
+﻿@model ProjectWhiteWave.ViewModels.SupportEventViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>SupportEvent</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.SupportEvent.SupportEventId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SupportEvent.DateOpened, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SupportEvent.DateOpened)
+                @Html.ValidationMessageFor(model => model.SupportEvent.DateOpened)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SupportEvent.DateClosed, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SupportEvent.DateClosed)
+                @Html.ValidationMessageFor(model => model.SupportEvent.DateClosed)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.AllEmployees, "Technicians", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBoxFor(model => model.SelectedEmployees, Model.AllEmployees)
+            </div>
+        </div>
+            @*
+            <div class="form-group">
+                @Html.LabelFor(model => model.SupportEvent.TicketId, "TicketId", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("TicketId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.SupportEvent.TicketId)
+                </div>
+            </div>
+            *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.SupportEvent.Description, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SupportEvent.Description)
+                @Html.ValidationMessageFor(model => model.SupportEvent.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
